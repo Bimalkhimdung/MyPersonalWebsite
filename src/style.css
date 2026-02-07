@@ -747,10 +747,22 @@ textarea.input-field {
   }
 
   .header.active {
-    top: 0;
-    left: 0;
-    max-width: unset;
-    border-radius: 0;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 700px;
+    width: 100%;
+    border-radius: var(--radius-pill);
+    padding-block: 10px;
+    background-color: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-2);
+    animation: slideInPill 0.5s ease forwards;
+  }
+
+  @keyframes slideInPill {
+    0% { transform: translate(-50%, -100%); }
+    100% { transform: translate(-50%, 0); }
   }
 
 
@@ -898,4 +910,70 @@ textarea.input-field {
 
   .about .grid-list { gap: 60px; }
 
+}
+
+/*-----------------------------------*\
+  #EXPERIENCE
+\*-----------------------------------*/
+
+.experience .title-wrapper { margin-block-end: 50px; }
+
+.experience-list {
+  display: grid;
+  gap: 30px;
+}
+
+.experience-card {
+  padding: 30px;
+  border-radius: var(--radius-8);
+  border-left: 4px solid var(--accent-color);
+  transition: var(--transition-2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: var(--white); /* Fallback */
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  opacity: 0; 
+  z-index: -1;
+  transition: var(--transition-2);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-2);
+}
+
+.experience-card:hover::before {
+  opacity: 0.3;
+}
+
+.card-header { margin-block-end: 15px; }
+
+.card-company {
+  display: block;
+  font-weight: var(--fw-700);
+  color: var(--accent-color);
+  margin-block-end: 5px;
+}
+
+.card-date {
+  font-size: var(--fs-8);
+  color: var(--manatee);
+}
+
+@media (min-width: 768px) {
+  .experience-list {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin-inline: auto;
+  }
 }

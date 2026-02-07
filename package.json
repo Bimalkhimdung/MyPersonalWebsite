@@ -1,0 +1,27 @@
+{
+  "name": "mypersonalwebsite",
+  "version": "1.0.0",
+  "description": "- [Click it here](https://raibimal.com.np) ## Documentation",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bimalkhimdung/MyPersonalWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bimalkhimdung/MyPersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/Bimalkhimdung/MyPersonalWebsite#readme",
+  "devDependencies": {
+    "@types/node": "^25.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^4.5.14"
+  }
+}
